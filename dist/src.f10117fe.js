@@ -136,6 +136,12 @@ function () {
     return this.data[proprName];
   };
 
+  ;
+
+  User.prototype.set = function (update) {
+    Object.assign(this.data, update);
+  };
+
   return User;
 }();
 
@@ -149,9 +155,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var User_1 = require("./models/User");
 
-var user = new User_1.User({
-  name: 'myname',
-  age: 20
+var user = new User_1.User({});
+user.set({
+  age: 999
 });
 console.log(user.get('name'), user.get('age'));
 },{"./models/User":"src/models/User.ts"}],"../../../../../.nvm/versions/node/v14.15.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
